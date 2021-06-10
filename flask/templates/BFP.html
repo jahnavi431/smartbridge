@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("https://cdn.dribbble.com/users/2168142/screenshots/6310387/peerfit-walkcycles.gif");
+
+  min-height: 380px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Add styles to the form container */
+.container {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: white;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+input[type=number], select {
+  width:50%;
+  padding: 8px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  box-sizing: border-box;
+   opacity: 4;
+}
+input[type=submit] {
+  width: 20%;
+  background-color: green;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 2;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+</style>
+<div class="bg-img">
+<div align="center">
+    <p align="center" style="color: black;font-size:45px" ><b>PREDICT BODY FITNESS</b></p>
+<div align="center">
+<form action="/predict" method="POST">
+
+<b><p style="color: black;font-size:20px">Enter step_count</p></b>
+<input type="number"  name="step_count"/>
+<b><p style="color: black;font-size:20px">Enter mood</p></b>
+<input type="number"  name="mood"/>
+<b><p style="color: black;font-size:20px">Enter calories_burned</p></b>
+<input type="number"  name="calories_burned"/>
+<b><p style="color: black;font-size:20px">Enter hours_of_sleep</p></b>
+<input type="number"  name="hours_of_sleep"/>
+<br>
+<br>
+<br>
+<input type="submit"  value="prediction"/>
+
+
+</form>
+<b><p align="center" style="font-size:20px">{{prediction_text}}</p></b>
+</body>
+</html>
